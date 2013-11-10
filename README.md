@@ -2,6 +2,15 @@
 
 Sets up a dev box running `Ubuntu 12.04 LTS`
 
+Installs OS Packages:
+
+```
+git
+curl
+zip
+unzip
+```
+
 Installs LAMP packages:
 
 ```
@@ -12,12 +21,6 @@ php5-cli
 php5-dev
 php5-mysql
 php-pear
-```
-
-Installs OS Packages:
-
-```
-git
 ```
 
 Enables apache `mod_rewrite`

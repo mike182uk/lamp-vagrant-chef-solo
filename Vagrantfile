@@ -16,6 +16,8 @@ Vagrant.configure("2") do |config|
 
         chef.add_recipe "apt"
         chef.add_recipe "git"
+        chef.add_recipe "curl"
+        chef.add_recipe "zip"
         chef.add_recipe "openssl"
         chef.add_recipe "apache2"
         chef.add_recipe "apache2::mod_rewrite"

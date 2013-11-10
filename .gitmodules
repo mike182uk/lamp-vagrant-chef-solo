@@ -19,3 +19,9 @@
 [submodule ".chef/cookbooks/git"]
 	path = .chef/cookbooks/git
 	url = git@github.com:opscode-cookbooks/git.git
+[submodule ".chef/cookbooks/curl"]
+	path = .chef/cookbooks/curl
+	url = git@github.com:retr0h/cookbook-curl.git
+[submodule ".chef/cookbooks/zip"]
+	path = .chef/cookbooks/zip
+	url = git@github.com:phlipper/chef-zip.git
