@@ -13,6 +13,13 @@ php5-dev
 php5-mysql
 php-pear
 ```
+
+Installs OS Packages:
+
+```
+git
+```
+
 Enables apache `mod_rewrite`
 
 Sets mysql root password to `root`
@@ -30,6 +37,8 @@ pdepend
 ```
 
 Installs [composer](http://getcomposer.org/)
+
+Installs [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer)
 
 ### Usage
 
