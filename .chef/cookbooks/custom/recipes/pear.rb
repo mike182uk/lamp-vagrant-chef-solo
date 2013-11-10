@@ -1,5 +1,5 @@
 
-# Discover phpqatools channels
+# Discover phpqatools channel
 pqa = php_pear_channel "pear.phpqatools.org" do
   action :discover
 end

@@ -1,6 +1,7 @@
 name              "custom"
 maintainer        "Mike Barrett"
 maintainer_email  "mike182uk@gmail.com"
+description       "Misc bootstrapping for a LAMP node"
 
 depends "php"
 
