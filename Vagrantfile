@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "apache2::mod_php5"
         chef.add_recipe "composer"
         chef.add_recipe "custom::pear"
+        chef.add_recipe "custom::phpcsfixer"
 
         chef.json = {
             :apache => {
