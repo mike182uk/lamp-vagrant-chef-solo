@@ -1,15 +1,23 @@
-execute "pear upgrade" do
-  action :run
+
+# Discover phpqatools channels
+pqa = php_pear_channel "pear.phpqatools.org" do
+  action :discover
 end
 
-execute "pear config-set auto_discover 1" do
-  action :run
-end
+commands = [
+    'upgrade', # Upgrade Pear
+    'config-set auto_discover 1', # Autodiscover new channels
+    'update-channels' # Update existing channels
+]
 
-execute "pear update-channels" do
-  action :run
-end
+commands.each { |command|
+    execute "pear #{command}" do
+      action :run
+    end
+}
 
-execute "pear install pear.phpqatools.org/phpqatools" do
-  action :run
+# Install phpqatools pear package
+php_pear "phpqatools" do
+  channel pqa.channel_name
+  action :install
 end
