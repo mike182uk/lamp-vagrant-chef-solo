@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "apt"
         chef.add_recipe "git"
         chef.add_recipe "curl"
+        chef.add_recipe "custom::wget"
         chef.add_recipe "zip"
         chef.add_recipe "openssl"
         chef.add_recipe "apache2"
@@ -27,7 +28,7 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "php::module_mysql"
         chef.add_recipe "apache2::mod_php5"
         chef.add_recipe "composer"
-        chef.add_recipe "custom::pear"
+        chef.add_recipe "custom::phpqatools"
         chef.add_recipe "custom::phpcsfixer"
 
         chef.json = {
