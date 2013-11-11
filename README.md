@@ -7,6 +7,7 @@ Installs OS Packages:
 ```
 git
 curl
+wget
 zip
 unzip
 ```
@@ -42,6 +43,8 @@ pdepend
 Installs [composer](http://getcomposer.org/)
 
 Installs [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer)
+
+Installs [phpmyadmin](http://www.phpmyadmin.net/home_page/index.php)
 
 ### Usage
 

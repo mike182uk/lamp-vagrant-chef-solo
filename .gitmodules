@@ -25,3 +25,6 @@
 [submodule ".chef/cookbooks/zip"]
 	path = .chef/cookbooks/zip
 	url = git@github.com:phlipper/chef-zip.git
+[submodule ".chef/cookbooks/phpmyadmin"]
+	path = .chef/cookbooks/phpmyadmin
+	url = git@github.com:Agiley/chef-phpmyadmin.git

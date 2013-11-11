@@ -22,11 +22,12 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "openssl"
         chef.add_recipe "apache2"
         chef.add_recipe "apache2::mod_rewrite"
-        chef.add_recipe "apache2::mod_fcgid"
+        chef.add_recipe "apache2::mod_alias"
         chef.add_recipe "mysql::server"
         chef.add_recipe "php"
         chef.add_recipe "php::module_mysql"
         chef.add_recipe "apache2::mod_php5"
+        chef.add_recipe "phpmyadmin"
         chef.add_recipe "composer"
         chef.add_recipe "custom::phpqatools"
         chef.add_recipe "custom::phpcsfixer"
@@ -38,7 +39,8 @@ Vagrant.configure("2") do |config|
             :mysql => {
                 :server_root_password => "root",
                 :server_debian_password => "root",
-                :server_repl_password => "root"
+                :server_repl_password => "root",
+                :mysql_bin => "/usr/bin/mysql"
             }
         }
     end
