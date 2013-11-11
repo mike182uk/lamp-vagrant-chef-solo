@@ -5,5 +5,5 @@ description       "Misc bootstrapping for a LAMP node"
 
 depends "php"
 
-recipe "custom::pear", "Installs pear packages"
-recipe "custom::phpcsfixer", "Installs php-cs-fixer"
+recipe "custom::phpqatools", "Installs PHP QA Tools (PHPUnit, PHPMD, PHPCPD etc) via pear"
+recipe "custom::phpcsfixer", "Installs PHP CS Fixer"

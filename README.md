@@ -24,7 +24,7 @@ php5-mysql
 php-pear
 ```
 
-Enables apache `mod_rewrite`
+Enables apache `mod_rewrite`, `mod_alias`
 
 Sets mysql root password to `root`
 
@@ -51,7 +51,7 @@ Installs [phpmyadmin](http://www.phpmyadmin.net/home_page/index.php)
 1. Make sure you have [vagrant](http://www.vagrantup.com/) installed
 2. Clone this repo
 3. Navigate to directory in terminal and run `vagrant up`
-4. Once vagrant has done its business, if you navigate to `localhost:8080` you should see a the default apache welcom page
+4. Once vagrant has done its business, if you navigate to `localhost:8080` you should see a the default apache welcome page
 
 ### Notes
 
