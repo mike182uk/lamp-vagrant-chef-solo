@@ -1,4 +1,4 @@
-# LAMP dev box with vagrant and chef
+# LAMP dev box with vagrant and chef solo
 
 Sets up a dev box running `Ubuntu 12.04 LTS`
 
