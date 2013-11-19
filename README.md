@@ -6,10 +6,31 @@ Installs OS Packages:
 
 ```
 git
-curl
-wget
 zip
 unzip
+```
+Installs Networking Packages:
+
+```
+lsof
+iptables
+jwhois
+whois
+curl
+wget
+rsync
+jnettop
+nmap
+traceroute
+ethtool
+iproute
+iputils-ping
+netcat-openbsd
+tcptraceroute
+tcputils
+tcpdump
+elinks
+lynx
 ```
 
 Installs LAMP packages:
@@ -49,7 +70,7 @@ Installs [phpmyadmin](http://www.phpmyadmin.net/home_page/index.php)
 ### Usage
 
 1. Make sure you have [vagrant](http://www.vagrantup.com/) installed
-2. Clone this repo
+2. Clone this repo - This repo makes use of git submodules so make sure you clone recursively (`git clone --recursive ...`)
 3. Navigate to directory in terminal and run `vagrant up`
 4. Once vagrant has done its business, if you navigate to `localhost:8080` you should see a the default apache welcome page
 
