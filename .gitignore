@@ -1,1 +1,3 @@
-.vagrant
+chef/tmp
+chef/Cheffile.lock
+Gemfile.lock

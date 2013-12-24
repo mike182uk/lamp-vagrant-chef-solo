@@ -1,24 +1,22 @@
 Vagrant.configure("2") do |config|
-
     # Box
     config.vm.box = "precise64"
     config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     # Networking
-    config.vm.network :forwarded_port, guest: 80, host: 8080
+    config.vm.network :private_network, ip: "33.33.33.10"
 
     # Synced folders
-    config.vm.synced_folder "./", "/var/www"
+    config.vm.synced_folder "./", "/var/www", type: "nfs"
 
-    # Provisioning via chef solo
+    # Provision via chef solo
     config.vm.provision :chef_solo do |chef|
-        chef.cookbooks_path = ".chef/cookbooks"
+        chef.cookbooks_path = [
+            "chef/cookbooks",
+            "chef/site-cookbooks"
+        ]
 
         chef.add_recipe "apt"
-        chef.add_recipe "git"
-        chef.add_recipe "zip"
-        chef.add_recipe "networking_basic"
-        chef.add_recipe "openssl"
         chef.add_recipe "apache2"
         chef.add_recipe "apache2::mod_rewrite"
         chef.add_recipe "apache2::mod_alias"
@@ -28,8 +26,8 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "apache2::mod_php5"
         chef.add_recipe "phpmyadmin"
         chef.add_recipe "composer"
-        chef.add_recipe "misc::phpqatools"
-        chef.add_recipe "misc::phpcsfixer"
+        chef.add_recipe "php::phpqatools"
+        chef.add_recipe "php::phpcsfixer"
 
         chef.json = {
             :apache => {
@@ -43,5 +41,4 @@ Vagrant.configure("2") do |config|
             }
         }
     end
-
 end
