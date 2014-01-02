@@ -1,6 +1,6 @@
 #LAMP dev box with Vagrant and Chef Solo
 
-Sets up a LAMP box running `Ubuntu 12.04 LTS`.
+Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 
 Uses [Librarian Chef](https://github.com/applicationsonline/librarian-chef) to manage third-party cookbooks.
 
@@ -20,7 +20,7 @@ Enables Apache `mod_rewrite`, `mod_alias`
 
 Sets MySQL root password to `root`
 
-Installs pear packages:
+Installs Pear packages:
 
 ```
 PHPUnit
@@ -64,4 +64,4 @@ cd ../
 vagrant up
 ```
 
-- Once vagrant has done its stuff, if you navigate to `http://33.33.33.10/` in a browser you should see the default apache welcome page. You can access phpmyadmin at `http://33.33.33.10/phpmyadmin`.
+- Once vagrant has done its stuff, if you navigate to `http://33.33.33.10/` in a browser you should see the default Apache welcome page. You can access phpmyadmin at `http://33.33.33.10/phpmyadmin`.
