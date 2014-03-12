@@ -2,7 +2,7 @@ site "http://community.opscode.com/api/v1"
 
 cookbook "apt"
 cookbook "apache2"
-cookbook "php", "1.2.6" # 1.2.6 does not have the windows dependency that seems to break everything :s
+cookbook "php"
 cookbook "mysql"
 cookbook "composer",
     :git => "https://github.com/zircote/chef-composer"
