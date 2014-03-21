@@ -2,44 +2,36 @@
 
 Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 
-Uses [Librarian Chef](https://github.com/applicationsonline/librarian-chef) to manage third-party cookbooks.
-
-Installs LAMP packages:
-
-- apache2
-- mysql-server
-- php5
-- php5-cli
-- php5-dev
-- php5-mysql
-- php-pear
-
-Enables Apache modules
-
-- mod_rewrite
-- mod_alias
-
-Sets MySQL root password to: `root`
-
-Installs Pear packages:
-
-- PHPUnit
-- phploc
-- phpmd
-- PHP_CodeBrowser
-- phpcs
-- phpcpd
-- pdepend
-
-Installs [Composer](http://getcomposer.org/)
-
-Installs [php-cs-fixer](https://github.com/fabpot/PHP-CS-Fixer)
-
-Installs [phpmyadmin](http://www.phpmyadmin.net/home_page/index.php)
+- LAMP packages installed:
+	- apache2
+	- mysql-server
+	- php5
+	- php5-cli
+	- php5-dev
+	- php5-mysql
+	- php-pear
+- Other useful packages installed:
+	- git
+	- vim
+- Default Apache site enabled
+- Apache modules enabled
+	- mod_rewrite
+	- mod_alias
+- MySQL database setup
+	- Database can be accessed from the host machine:
+		- **host:** 10.10.10.2
+		- **user:** root
+		- **password:** root
+- [Composer](http://getcomposer.org/) installed
+	- Sample `composer.json` included that contains useful QA + static analysis tools.
 
 ## Prerequisites
 
-- [Bundler](http://bundler.io/)
+- A Ruby environment with the following Gems installed:
+
+    - [Bundler](http://bundler.io/)
+
+- [Virtualbox](https://www.virtualbox.org/)
 
 - [Vagrant](http://www.vagrantup.com/) >=1.5 with the following plugins installed:
 
@@ -48,6 +40,12 @@ Installs [phpmyadmin](http://www.phpmyadmin.net/home_page/index.php)
     - [vagrant-librarian-chef](https://github.com/jimmycuadra/vagrant-librarian-chef) - Installs chef cookbooks listed in `chef/Cheffile`
     - [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) - Upgrades VirtualBox guest additions on the box
 
+    ```bash
+    vagrant plugin install vagrant-cachier
+    vagrant plugin install vagrant-omnibus
+    vagrant plugin install vagrant-libraian-chef
+    vagrant plugin install vagrant-vbguest
+    ```
 ##Usage
 
 Install required Ruby Gems:
@@ -59,10 +57,19 @@ bundle install
 Setup and provision the box:
 
 ```
-cd ../
 vagrant up
 ```
 
-Once Vagrant has done its stuff, if you navigate to `http://33.33.33.10/` in a browser you should see the default Apache welcome page.
+Once Vagrant has done its stuff, if you navigate to `http://10.10.10.2/` in a browser you should see the default Apache welcome page.
 
-You can access phpmyadmin at `http://33.33.33.10/phpmyadmin`.
+
+To install QA + static analysis tools:
+
+```
+composer install --prefer-dist
+```
+
+## Notes
+
+I have only tested this on OS X (10.9). In theory it should work on most operating systems, although Windows will probably have a problem using NFS for synced folders.
+See NFS alternatives [here](https://docs.vagrantup.com/v2/synced-folders/basic_usage.html).

@@ -1,10 +1,10 @@
 site "http://community.opscode.com/api/v1"
 
 cookbook "apt"
+cookbook "git"
+cookbook "vim"
 cookbook "apache2"
 cookbook "php"
 cookbook "mysql"
 cookbook "composer",
     :git => "https://github.com/zircote/chef-composer"
-cookbook "phpmyadmin",
-    :git => "https://github.com/Agiley/chef-phpmyadmin"

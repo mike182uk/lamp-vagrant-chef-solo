@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     # Networking
-    config.vm.network :private_network, ip: "33.33.33.10"
+    config.vm.network :private_network, ip: "10.10.10.2"
 
     # Synced folders
     config.vm.synced_folder "./", "/var/www", type: "nfs"
@@ -22,17 +22,17 @@ Vagrant.configure("2") do |config|
         ]
 
         chef.add_recipe "apt"
+        chef.add_recipe "git"
+        chef.add_recipe "vim"
         chef.add_recipe "apache2"
         chef.add_recipe "apache2::mod_rewrite"
         chef.add_recipe "apache2::mod_alias"
         chef.add_recipe "mysql::server"
+        chef.add_recipe "mysql::remote-access"
         chef.add_recipe "php"
         chef.add_recipe "php::module_mysql"
         chef.add_recipe "apache2::mod_php5"
-        chef.add_recipe "phpmyadmin"
         chef.add_recipe "composer"
-        chef.add_recipe "php::phpqatools"
-        chef.add_recipe "php::phpcsfixer"
 
         chef.json = {
             :apache => {
@@ -42,7 +42,13 @@ Vagrant.configure("2") do |config|
                 :server_root_password => "root",
                 :server_debian_password => "root",
                 :server_repl_password => "root",
-                :mysql_bin => "/usr/bin/mysql"
+                :mysql_bin => "/usr/bin/mysql",
+                :bind_address => "0.0.0.0"
+            },
+            :php => {
+                :directives => {
+                    "date.timezone" => "Europe/London"
+                }
             }
         }
     end
