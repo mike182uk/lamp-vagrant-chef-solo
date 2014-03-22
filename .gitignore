@@ -1,4 +1,2 @@
 chef/tmp
 chef/cookbooks
-chef/Cheffile.lock
-Gemfile.lock
