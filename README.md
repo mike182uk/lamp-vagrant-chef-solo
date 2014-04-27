@@ -10,6 +10,7 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 	- php5-dev
 	- php5-mysql
 	- php-pear
+    - xdebug
 - Other useful packages installed:
 	- git
 	- vim
@@ -22,8 +23,13 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 		- **host:** 10.10.10.2
 		- **user:** root
 		- **password:** root
-- [Composer](http://getcomposer.org/) installed
+- Composer installed and available globally
 	- Sample `composer.json` included that contains useful QA + static analysis tools.
+- Xdebug installed and setup to accept allow remote debugging
+    - To remote debug use the following values in your ide / debugger:
+        - **host:** 10.10.10.2
+        - **remote port:** 9000
+        - **ide key:** lamp-vagrant-dev
 
 ## Prerequisites
 
@@ -46,6 +52,7 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
     vagrant plugin install vagrant-libraian-chef
     vagrant plugin install vagrant-vbguest
     ```
+
 ##Usage
 
 Install required Ruby Gems:
@@ -61,7 +68,6 @@ vagrant up
 ```
 
 Once Vagrant has done its stuff, if you navigate to `http://10.10.10.2/` in a browser you should see the default Apache welcome page.
-
 
 To install QA + static analysis tools:
 

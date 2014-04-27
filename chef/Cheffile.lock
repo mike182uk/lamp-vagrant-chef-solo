@@ -35,6 +35,14 @@ SITE
       yum (~> 3.0)
 
 GIT
+  remote: https://github.com/escapestudios-cookbooks/xdebug
+  ref: master
+  sha: 5f53e20d49c9e6013088e28d4cdc69edac156dd9
+  specs:
+    xdebug (0.0.1)
+      php (>= 0.0.0)
+
+GIT
   remote: https://github.com/zircote/chef-composer
   ref: master
   sha: 007912436c79f0b0c1f2d1732413ac42279811c2
@@ -49,4 +57,5 @@ DEPENDENCIES
   mysql (>= 0)
   php (>= 0)
   vim (>= 0)
+  xdebug (>= 0)
 

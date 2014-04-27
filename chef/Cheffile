@@ -8,3 +8,5 @@ cookbook "php"
 cookbook "mysql"
 cookbook "composer",
     :git => "https://github.com/zircote/chef-composer"
+cookbook "xdebug",
+    :git => "https://github.com/escapestudios-cookbooks/xdebug"
