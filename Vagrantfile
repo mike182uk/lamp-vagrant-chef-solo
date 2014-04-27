@@ -10,7 +10,6 @@ Vagrant.configure("2") do |config|
 
     # Networking
     config.vm.network :private_network, ip: "10.10.10.2"
-    config.vm.hostname = "lamp-vagrant-dev"
 
     # Synced folders
     config.vm.synced_folder "./", "/var/www", type: "nfs"
