@@ -25,7 +25,7 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 		- **password:** root
 - Composer installed and available globally
 	- Sample `composer.json` included that contains useful QA + static analysis tools.
-- Xdebug installed and setup to accept allow remote debugging
+- Xdebug installed and setup to allow remote debugging
     - To remote debug use the following values in your ide / debugger:
         - **host:** 10.10.10.2
         - **remote port:** 9000
