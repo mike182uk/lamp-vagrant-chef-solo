@@ -31,6 +31,8 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "mysql::remote-access"
         chef.add_recipe "php"
         chef.add_recipe "php::module_mysql"
+        chef.add_recipe "php::module_apc"
+        chef.add_recipe "php::module_curl"
         chef.add_recipe "xdebug"
         chef.add_recipe "apache2::mod_php5"
         chef.add_recipe "composer"

@@ -8,8 +8,10 @@
         "squizlabs/php_codesniffer": "2.0.*@dev",
         "pdepend/pdepend": "2.0.0.*@dev",
         "phpspec/phpspec": "2.0.*",
-        "fabpot/php-cs-fixer": "0.4.*@dev"
+        "fabpot/php-cs-fixer": "0.4.*@dev",
+        "theseer/phpdox": "0.5.*@dev"
     },
+    "minimum-stability": "dev",
     "config": {
        "bin-dir": "bin"
     }

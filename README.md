@@ -11,6 +11,7 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 	- php5-mysql
 	- php-pear
     - xdebug
+    - apc
 - Other useful packages installed:
 	- git
 	- vim
@@ -53,6 +54,8 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
     vagrant plugin install vagrant-vbguest
     ```
 
+- [Composer](https://getcomposer.org/)
+
 ##Usage
 
 Install required Ruby Gems:
@@ -74,6 +77,8 @@ To install QA + static analysis tools:
 ```
 composer install --prefer-dist
 ```
+
+## FAQ's
 
 ## Notes
 
