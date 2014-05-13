@@ -30,7 +30,7 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
     - To remote debug use the following values in your ide / debugger:
         - **host:** 10.10.10.2
         - **remote port:** 9000
-        - **ide key:** lamp-vagrant-dev
+        - **ide key:** *<leave blank>*
 
 ## Prerequisites
 
@@ -79,6 +79,10 @@ composer install --prefer-dist
 ```
 
 ## FAQ's
+
+**How can i speed up provisioning?**
+
+At the top of the `Vagrantfile` there is the constant `USE_PRECONFIGURED_LAMP_BOX` which is set to `false` by default. If you set this to `true` a preconfigured LAMP base box will be used instead of a blank ubuntu base box. You should still leave the default recipes in the run list so any config values are set accordingly but any packages that these recipes install will already be installed on the base box speeding up provisioning significantly. You can see more information about the preconfigured base box [here](https://github.com/mike182uk/packer-lamp-vagrant-chef-solo).
 
 ## Notes
 
