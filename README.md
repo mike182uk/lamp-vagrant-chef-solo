@@ -1,4 +1,4 @@
-#LAMP dev box with Vagrant and Chef Solo
+#LAMP development box with Vagrant and Chef Solo
 
 Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 
@@ -12,25 +12,24 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 	- php-pear
     - xdebug
     - apc
-- Other useful packages installed:
+- Other miscellaneous packages installed:
 	- git
 	- vim
 - Default Apache site enabled
 - Apache modules enabled
 	- mod_rewrite
 	- mod_alias
-- MySQL database setup
-	- Database can be accessed from the host machine:
-		- **host:** 10.10.10.2
-		- **user:** root
-		- **password:** root
+- MySQL can be accessed from the host machine
+	- **host:** 10.10.10.2
+	- **user:** root
+	- **password:** root
 - Composer installed and available globally
 	- Sample `composer.json` included that contains useful QA + static analysis tools.
 - Xdebug installed and setup to allow remote debugging
     - To remote debug use the following values in your ide / debugger:
         - **host:** 10.10.10.2
         - **remote port:** 9000
-        - **ide key:** *<leave blank>*
+        - **ide key:** *leave blank*
 
 ## Prerequisites
 
@@ -72,7 +71,7 @@ vagrant up
 
 Once Vagrant has done its stuff, if you navigate to `http://10.10.10.2/` in a browser you should see the default Apache welcome page.
 
-To install QA + static analysis tools:
+To install QA + static analysis tools (from the VM or host if you have composer installed globally):
 
 ```
 composer install --prefer-dist
@@ -82,7 +81,7 @@ composer install --prefer-dist
 
 **How can i speed up provisioning?**
 
-At the top of the `Vagrantfile` there is the constant `USE_PRECONFIGURED_LAMP_BOX` which is set to `false` by default. If you set this to `true` a preconfigured LAMP base box will be used instead of a blank ubuntu base box. You should still leave the default recipes in the run list so any config values are set accordingly but any packages that these recipes install will already be installed on the base box speeding up provisioning significantly. You can see more information about the preconfigured base box [here](https://github.com/mike182uk/packer-lamp-vagrant-chef-solo).
+At the top of the `Vagrantfile` there is the constant `USE_PRECONFIGURED_LAMP_BOX` which is set to `false` by default. If you set this to `true` a preconfigured LAMP base box will be used instead of a blank ubuntu base box. You should still leave the default recipes in the run list so any config values are set accordingly but any packages that these recipes install will already be installed on the base box speeding up provisioning significantly. You can see more information about the preconfigured base box [here](https://github.com/mike182uk/packer-lamp-vagrant-base-box).
 
 ## Notes
 
