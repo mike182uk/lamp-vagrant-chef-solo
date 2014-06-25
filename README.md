@@ -49,7 +49,7 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
     ```bash
     vagrant plugin install vagrant-cachier
     vagrant plugin install vagrant-omnibus
-    vagrant plugin install vagrant-libraian-chef
+    vagrant plugin install vagrant-librarian-chef
     vagrant plugin install vagrant-vbguest
     ```
 
