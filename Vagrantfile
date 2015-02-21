@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "apache2::mod_rewrite"
         chef.add_recipe "apache2::mod_alias"
         chef.add_recipe "apache2::mod_php5"
-        chef.add_recipe "mysql::server"
+        chef.add_recipe "base::mysql"
         chef.add_recipe "php"
         chef.add_recipe "php::module_apc"
         chef.add_recipe "php::module_curl"
@@ -46,23 +46,22 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "composer"
 
         chef.json = {
-            :apache => {
-                :default_site_enabled => true
+            "apache" => {
+                "default_site_enabled" => true
             },
-            :mysql => {
-                :server_root_password => "root",
-                :server_debian_password => "root",
-                :server_repl_password => "root",
-                :allow_remote_root => true
-            },
-            :php => {
-                :ini_settings => {
+            "php" => {
+                "ini_settings" => {
                     "date.timezone" => "Europe/London"
                 }
             },
-            :xdebug => {
-                :remote_enable => 1,
-                :remote_connect_back => 1
+            "xdebug" => {
+                "config_file" => "/etc/php5/conf.d/xdebug.ini",
+                "directives" => {
+                    "remote_autostart" => 1,
+                    "remote_connect_back" => 1,
+                    "remote_enable" => 1,
+                    "remote_log" => "/tmp/xdebug-remote.log"
+                }
             }
         }
     end

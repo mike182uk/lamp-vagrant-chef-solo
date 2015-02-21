@@ -26,10 +26,6 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 - Composer installed and available globally
 	- Sample `composer.json` included that contains useful QA + static analysis tools.
 - Xdebug installed and setup to allow remote debugging
-    - To remote debug use the following values in your ide / debugger:
-        - **host:** 10.10.10.2
-        - **remote port:** 9000
-        - **ide key:** *leave blank*
 
 ## Prerequisites
 
@@ -40,7 +36,6 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
     - [vagrant-omnibus](https://github.com/schisamo/vagrant-omnibus) - Upgrades chef to the latest version on the box
     - [vagrant-berkshelf](https://github.com/berkshelf/vagrant-berkshelf) - Installs cookbooks listed in `Berksfile`
     - [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) - Upgrades VirtualBox guest additions on the box
-
     ```bash
     vagrant plugin install vagrant-cachier
     vagrant plugin install vagrant-omnibus
@@ -73,5 +68,5 @@ At the top of the `Vagrantfile` there is the constant `USE_PRECONFIGURED_LAMP_BO
 
 ## Notes
 
-I have only tested this on OS X (10.9). In theory it should work on most operating systems, although Windows will probably have a problem using NFS for synced folders.
+I have only tested this on OS X (>=10.9). In theory it should work on most operating systems, although Windows will probably have a problem using NFS for synced folders.
 See NFS alternatives [here](https://docs.vagrantup.com/v2/synced-folders/basic_usage.html).
