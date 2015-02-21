@@ -33,35 +33,23 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 
 ## Prerequisites
 
-- A Ruby environment with the following Gems installed:
-
-    - [Bundler](http://bundler.io/)
-
+- [Chef Development Kit](https://downloads.chef.io/chef-dk/)
 - [Virtualbox](https://www.virtualbox.org/)
-
 - [Vagrant](http://www.vagrantup.com/) >=1.5 with the following plugins installed:
-
     - [vagrant-cachier](https://github.com/fgrehm/vagrant-cachier) - Caches downloads on the box (saves you bandwidth)
-    - [vagrant-ombnibus](https://github.com/schisamo/vagrant-omnibus) - Upgrades chef to the latest version on the box
-    - [vagrant-librarian-chef](https://github.com/jimmycuadra/vagrant-librarian-chef) - Installs chef cookbooks listed in `chef/Cheffile`
+    - [vagrant-omnibus](https://github.com/schisamo/vagrant-omnibus) - Upgrades chef to the latest version on the box
+    - [vagrant-berkshelf](https://github.com/berkshelf/vagrant-berkshelf) - Installs cookbooks listed in `Berksfile`
     - [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) - Upgrades VirtualBox guest additions on the box
 
     ```bash
     vagrant plugin install vagrant-cachier
     vagrant plugin install vagrant-omnibus
-    vagrant plugin install vagrant-librarian-chef
+    vagrant plugin install vagrant-berkshelf
     vagrant plugin install vagrant-vbguest
     ```
-
 - [Composer](https://getcomposer.org/)
 
 ##Usage
-
-Install required Ruby Gems:
-
-```bash
-bundle install
-```
 
 Setup and provision the box:
 
