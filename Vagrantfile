@@ -53,6 +53,7 @@ Vagrant.configure("2") do |config|
                 }
             },
             "xdebug" => {
+                "version" => "2.2.7",
                 "config_file" => "/etc/php5/conf.d/xdebug.ini",
                 "directives" => {
                     "remote_autostart" => 1,
