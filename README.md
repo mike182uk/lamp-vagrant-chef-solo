@@ -13,7 +13,6 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
     - xdebug
     - apc
 - Other miscellaneous packages installed:
-	- git
 	- vim
 - Default Apache site enabled
 - Apache modules enabled
@@ -23,8 +22,7 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 	- **host:** 10.10.10.2
 	- **user:** root
 	- **password:** root
-- Composer installed and available globally
-	- Sample `composer.json` included that contains useful QA + static analysis tools.
+- Sample `composer.json` included that contains useful QA + static analysis tools.
 - Xdebug installed and setup to allow remote debugging
 
 ## Prerequisites
@@ -54,7 +52,7 @@ vagrant up
 
 Once Vagrant has done its stuff, if you navigate to `http://10.10.10.2/` in a browser you should see the default Apache welcome page.
 
-To install QA + static analysis tools (from the VM or host if you have composer installed globally):
+To install QA + static analysis tools (from the host):
 
 ```
 composer install --prefer-dist

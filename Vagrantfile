@@ -28,7 +28,6 @@ Vagrant.configure("2") do |config|
         ]
 
         chef.add_recipe "apt"
-        chef.add_recipe "git"
         chef.add_recipe "vim"
         chef.add_recipe "apache2"
         chef.add_recipe "apache2::mod_rewrite"
@@ -43,7 +42,6 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "php::module_mysql"
         chef.add_recipe "php::apache2"
         chef.add_recipe "xdebug"
-        chef.add_recipe "composer"
 
         chef.json = {
             "apache" => {
