@@ -1,6 +1,6 @@
 #LAMP development box with Vagrant and Chef Solo
 
-Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
+Sets up a LAMP dev box running `Ubuntu 14.04 LTS`.
 
 - LAMP packages installed:
 	- apache2
@@ -10,8 +10,7 @@ Sets up a LAMP dev box running `Ubuntu 12.04 LTS`.
 	- php5-dev
 	- php5-mysql
 	- php-pear
-    - xdebug
-    - apc
+  - xdebug
 - Other miscellaneous packages installed:
 	- vim
 - Default Apache site enabled

@@ -11,8 +11,11 @@ Vagrant.configure("2") do |config|
         config.vm.box = "lamp-vagrant-chef-solo"
         config.vm.box_url = "https://dl.dropboxusercontent.com/u/13070740/vagrant-base-boxes/lamp-vagrant-chef-solo.box"
     else
-        config.vm.box = "precise64"
-        config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+        config.vm.box = "ubuntu/trusty64"
+        config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/trusty64"
+
+        # Install the latest version of chef
+        config.omnibus.chef_version = :latest
     end
 
     # Networking
@@ -37,20 +40,20 @@ Vagrant.configure("2") do |config|
         chef.add_recipe "php::module_mcrypt"
         chef.add_recipe "php::module_mysql"
         chef.add_recipe "php::apache2"
-        chef.add_recipe "xdebug"
+        chef.add_recipe "base::xdebug"
 
         chef.json = {
             "apache" => {
                 "default_site_enabled" => true
             },
             "php" => {
+                "ext_conf_dir" => "/etc/php5/mods-available",
                 "ini_settings" => {
                     "date.timezone" => "Europe/London"
                 }
             },
             "xdebug" => {
-                "version" => "2.2.7",
-                "config_file" => "/etc/php5/conf.d/xdebug.ini",
+                "config_file" => "/etc/php5/mods-available/xdebug.ini",
                 "directives" => {
                     "remote_autostart" => 1,
                     "remote_connect_back" => 1,
