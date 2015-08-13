@@ -1,6 +1,11 @@
 USE_PRECONFIGURED_LAMP_BOX = false
 
 Vagrant.configure("2") do |config|
+    # Virtualbox config
+    config.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "1024"]
+    end
+
     # Vagrant plugins config
     config.cache.scope = :box
     config.omnibus.chef_version = :latest
