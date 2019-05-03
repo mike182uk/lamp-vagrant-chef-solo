@@ -1,4 +1,6 @@
-#LAMP development box with Vagrant and Chef Solo
+#### ⚠️ This project is no longer maintained
+
+# LAMP development box with Vagrant and Chef Solo
 
 Sets up a LAMP dev box running `Ubuntu 14.04 LTS`.
 
@@ -41,11 +43,11 @@ Sets up a LAMP dev box running `Ubuntu 14.04 LTS`.
     ```
 - [Composer](https://getcomposer.org/)
 
-##Usage
+## Usage
 
 Setup and provision the box:
 
-```
+```bash
 vagrant up
 ```
 
@@ -53,7 +55,7 @@ Once Vagrant has done its stuff, if you navigate to `http://10.10.10.2/` in a br
 
 To install QA + static analysis tools (from the host):
 
-```
+```bash
 composer install --prefer-dist
 ```
 
